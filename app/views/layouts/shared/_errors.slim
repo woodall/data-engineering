@@ -1,0 +1,8 @@
+- if obj.errors.any?
+  #error_explanation
+    h2
+      = pluralize(obj.errors.count, "error")
+      | prohibited this data_file from being saved:
+    ul
+      - @data_file.errors.full_messages.each do |msg|
+        li= msg
