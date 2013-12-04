@@ -1,0 +1,10 @@
+.m-checkout-area{
+  @include row;
+}
+.m-checkouts, .m-new-checkout{
+  @include span-columns(6);
+}
+
+.m-new-checkout{
+  margin-top: 2em;
+}

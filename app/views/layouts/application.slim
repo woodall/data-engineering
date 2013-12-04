@@ -6,7 +6,7 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
-    = render 'layouts/shared/flash'
-    = link_to 'Upload a file', new_checkout_path
-    = yield
+    .l-container
+      = render 'layouts/shared/flash'
+      = yield
 
