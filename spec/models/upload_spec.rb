@@ -6,7 +6,16 @@ describe Upload do
     expect(upload).to be_valid
   end
 
-  it 'totals all checkouts' do
+  describe "#total" do
+    it 'Adds the checkout totals together' do
+      upload          = FactoryGirl.create(:upload)
+      item            = FactoryGirl.create(:item)
+      checkout        = FactoryGirl.create(:checkout, upload_id: upload.id, item_id: item.id)
+      checkout_2      = FactoryGirl.create(:checkout, upload_id: upload.id, item_id: item.id)
+      upload_total    = upload.total
+      expected_total  = 40 # Based of the factories
 
+      expect(upload_total).to eq(expected_total)
+    end
   end
 end
