@@ -6,6 +6,14 @@ describe Checkout do
     expect(checkout).to be_valid
   end
 
-  it 'totals the items in the line item' do
+  describe "#total" do
+    it 'Multiplies purchase quantity by item price' do
+      item              = FactoryGirl.create(:item)
+      checkout          = FactoryGirl.create(:checkout)
+      checkout.item_id  = item.id
+      checkout_total    = checkout.total
+      expected_total    = 20 # Based of the factories
+      expect(checkout_total).to eq(expected_total)
+    end
   end
 end
