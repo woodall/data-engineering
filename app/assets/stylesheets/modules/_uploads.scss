@@ -1,0 +1,10 @@
+.m-upload-area{
+  @include row;
+}
+.m-uploads, .m-new-upload{
+  @include span-columns(6);
+}
+
+.m-new-upload{
+  margin-top: 2em;
+}
