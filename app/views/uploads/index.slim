@@ -2,7 +2,8 @@
   .m-uploads
     h1 Uploads
     - @uploads.each do |upload|
-      p= upload.created_at.strftime("%D, at %r, %Z")
-      p= number_to_currency(upload.total)
+      p
+        b= number_to_currency(upload.total)
+        i= upload.created_at.strftime(" (%b %e)")
   .m-new-upload
-    = link_to "Upload A File", new_upload_path
+    .button= link_to "Upload A File", new_upload_path

@@ -1,4 +1,5 @@
 module BuildItemService
+
   def self.call(data)
     description = data[1]
     price = data[2].to_i

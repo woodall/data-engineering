@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe BuildCustomerService do
   it 'ensures only one record per customer' do
-    data = [ 'Gilbert Arenas', 'n/a', 'n/a', 'n/a', 'n/a']
-    data_again = [ 'Gilbert Arenas', 'n/a', 'n/a', 'n/a', 'n/a']
+    data            = [ 'Gilbert Arenas' ]
+    data_again      = [ 'Gilbert Arenas' ]
 
     gilbert         = BuildCustomerService.call(data)
     gilbert_returns = BuildCustomerService.call(data_again)

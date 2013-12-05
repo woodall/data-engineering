@@ -1,4 +1,5 @@
 module UploadCreationService
+
   def self.call(file_contents, upload)
     line_items  = DataNormalizationService.call(file_contents)
     objects     = ObjectBuildService.call(line_items)

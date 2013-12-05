@@ -1,4 +1,5 @@
 module BuildMerchantService
+
   def self.call(data)
     address = data[4]
     name = data[5]
