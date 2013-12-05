@@ -1,3 +1,3 @@
 BigData::Application.routes.draw do
-  resources :checkouts
+  resources :uploads, only: [:new, :create, :index]
 end
