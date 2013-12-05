@@ -1,7 +1,0 @@
-.m-checkout-area
-  .m-checkouts
-    h1 Uploads
-    - @checkouts.each do |checkout|
-      p= checkout.created_at.strftime("%D, at %r, %Z")
-  .m-new-checkout
-    = link_to "Upload A File", new_checkout_path
