@@ -6,5 +6,18 @@
 }
 
 .m-new-upload{
-  margin-top: 2em;
+  margin-top: 7em;
+}
+
+.button{
+  text-align: center;
+  a{
+    @include span-columns(12);
+    padding: 0.5em;
+    text-decoration: none;
+    background: $green;
+    font-size: 2em;
+    color: $white;
+    &:hover{ background: $dkgreen; }
+  }
 }
