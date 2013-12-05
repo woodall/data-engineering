@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+upload      = Upload.create()
+
+customer    = Customer.create(name: 'Dave')
+customer_2  = Customer.create(name: 'Dan')
+
+item        = Item.create(item_description: 'bag', item_price: 2.3)
+item_2      = Item.create(item_description: 'box', item_price: 2.3)
+
+merchant    = Merchant.create(merchant_name: 'baggers', merchant_address: '123 main')
+merchant_2  = Merchant.create(merchant_name: 'boxers', merchant_address: '123 broadway')
+
+checkout    = Checkout.create( upload_id: upload.id, customer_id: customer.id, merchant_id: merchant.id, item_id: item.id, purchase_count: 2)
+checkout_2  = Checkout.create( upload_id: upload.id, customer_id: customer_2.id, merchant_id: merchant_2.id, item_id: item_2.id, purchase_count: 2)
+checkout_3  = Checkout.create( upload_id: upload.id, customer_id: customer.id, merchant_id: merchant_2.id, item_id: item.id, purchase_count: 2)
