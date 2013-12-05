@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ObjectBuildService do
-  it 'converts line items into data' do
+  it 'converts line items into objects' do
 
     data =  [
               ["Snake Plissken", "$10 off $20 of food", "10.0", "2", "987 Fake St", "Bob's Pizza" ],
