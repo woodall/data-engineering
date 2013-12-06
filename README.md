@@ -12,7 +12,7 @@ Create the database
 
     $ rake db:migrate
 
-_Note, if the above command fails, you might need to prefix your it, and the following command line tasks with `bundle exec`, like so,
+_Note, if the above command fails, you might need to prefix your it, and the following command line tasks with `bundle exec`, like so,_
 
     $ bundle exec rake db:migrate
 
@@ -35,7 +35,7 @@ Start the server with
 
 Navigate your browser to
 
-  localhost:3000
+  **localhost:3000**
 
 ### Try it out!
 
