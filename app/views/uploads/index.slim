@@ -1,0 +1,10 @@
+.m-upload-area
+  .m-uploads
+    h1 Uploads
+    - @uploads.each do |upload|
+      - if upload.total.is_a?(Fixnum) && upload.total > 0.1
+        p
+          b= number_to_currency(upload.total)
+          i= upload.created_at.strftime(" (%b %e)")
+  .m-new-upload
+    .button= link_to "Upload A File", new_upload_path

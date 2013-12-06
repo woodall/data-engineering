@@ -1,0 +1,14 @@
+.l-container{
+  @include outer-container;
+  margin-top: 2em;
+  padding: 3em;
+  background: $white;
+  border-radius: 3px;
+  border: 1px solid $ltgrey;
+}
+
+.l-footer{
+  @include outer-container;
+  text-align: right;
+  padding: 1em;
+}
