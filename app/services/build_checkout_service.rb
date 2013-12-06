@@ -1,4 +1,4 @@
-module BuildCheckoutService
+class BuildCheckoutService
 
   def self.call(objects, upload)
     objects.each do |object|

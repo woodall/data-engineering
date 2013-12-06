@@ -1,4 +1,4 @@
-module BuildMerchantService
+class BuildMerchantService
 
   def self.call(data)
     address = data[4]

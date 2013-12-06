@@ -1,4 +1,4 @@
-module BuildItemService
+class BuildItemService
 
   def self.call(data)
     description = data[1]

@@ -1,4 +1,4 @@
-module StringToArrayConversionService
+class StringToArrayConversionService
 
   def self.call file_contents
     checkouts = []

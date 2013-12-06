@@ -1,4 +1,4 @@
-module ObjectBuildService
+class ObjectBuildService
 
   def self.call(data)
     data.inject([]) do |objects, order_info|

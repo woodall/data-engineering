@@ -1,4 +1,4 @@
-module CheckoutInitializerService
+class CheckoutInitializerService
 
   def self.call(data)
     quantity = data[3]

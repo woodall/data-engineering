@@ -1,4 +1,4 @@
-module UploadCreationService
+class UploadCreationService
 
   def self.call(file_contents, upload)
     line_items  = StringToArrayConversionService.call(file_contents)
