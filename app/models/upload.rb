@@ -5,8 +5,12 @@ class Upload < ActiveRecord::Base
   has_many :items,      through: :checkouts
 
   def total
-    checkouts.inject(0) do |memo, checkout|
-      memo += checkout.total
+    begin
+      checkouts.inject(0) do |memo, checkout|
+        memo += checkout.total
+      end
+    rescue
+      self.destroy
     end
   end
 end

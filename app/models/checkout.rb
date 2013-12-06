@@ -5,7 +5,11 @@ class Checkout < ActiveRecord::Base
   belongs_to :customer
 
   def total
-    price = item.item_price
-    purchase_count * price
+    begin
+      price = item.item_price
+      purchase_count * price
+    rescue
+      self.destroy
+    end
   end
 end
