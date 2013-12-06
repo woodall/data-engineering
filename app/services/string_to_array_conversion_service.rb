@@ -1,4 +1,4 @@
-module DataNormalizationService
+module StringToArrayConversionService
 
   def self.call file_contents
     checkouts = []
