@@ -1,14 +1,30 @@
 require 'spec_helper'
 
 describe BuildCheckoutService do
-  it 'passes' do
-    false
-    # data = [ 'Gilbert Arenas', 'n/a', 'n/a', 'n/a', 'n/a']
-    # data_again = [ 'Gilbert Arenas', 'n/a', 'n/a', 'n/a', 'n/a']
 
-    # gilbert         = BuildCustomerService.call(data)
-    # gilbert_returns = BuildCustomerService.call(data_again)
+  let(:customer)  { FactoryGirl.create(:customer) }
+  let(:item)      { FactoryGirl.create(:item) }
+  let(:merchant)  { FactoryGirl.create(:merchant) }
+  let(:checkout)  { FactoryGirl.create(:checkout) }
+  let(:upload)    { FactoryGirl.create(:upload) }
+  let(:objects)   { [[ customer, item, merchant, checkout ]] }
+  let(:build_creation_service) { BuildCheckoutService.call(objects, upload) }
 
-    # expect(Customer.all.count).to eq(1)
+  before(:each) { build_creation_service }
+
+  it 'returns an array of objects' do
+    customer  = build_creation_service.first[0]
+    item      = build_creation_service.first[1]
+    merchant  = build_creation_service.first[2]
+
+    expect(customer.is_a? Customer).to be_true
+    expect(item.is_a? Item).to be_true
+    expect(merchant.is_a? Merchant).to be_true
+  end
+
+  it 'is associated with an upload object' do
+    upload_checkout_id = upload.checkouts.first.id
+    expect(upload_checkout_id).to eq(checkout.id)
   end
 end
+
