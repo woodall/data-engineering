@@ -7,7 +7,7 @@ describe Upload do
   end
 
   describe "#total" do
-    it 'Adds the checkout totals together' do
+    it 'Adds Checkout totals together' do
       upload          = FactoryGirl.create(:upload)
       item            = FactoryGirl.create(:item)
       checkout        = FactoryGirl.create(:checkout, upload_id: upload.id, item_id: item.id)
